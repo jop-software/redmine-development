@@ -1,0 +1,51 @@
+version: "3"
+
+services:
+  redmine:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    container_name: "redmine"
+    restart: always
+    ports:
+      - "3000:3000"
+    environment: 
+      RAILS_ENV: "development"
+      REDMINE_DB_MYSQL: database
+      REDMINE_DB_PASSWORD: root
+      REDMINE_SECRET_KEY_BASE: BfHuEvT6
+    volumes:
+      - ./files:/usr/src/redmine/files
+      - ./log:/usr/src/redmine/log
+      - ./plugins:/usr/src/redmine/plugins
+      - ./themes:/usr/src/redmine/public/themes
+    links:
+      - "database"
+      - "mailhog"
+
+  database:
+    image: mariadb:10.6.4
+    container_name: "redmine-database"
+    restart: always
+    environment: 
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: redmine
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    command: ["mysqld", "--character-set-server=utf8mb4",  "--collation-server=utf8mb4_unicode_ci"]
+
+  adminer:
+    container_name: "redmine-adminer"
+    image: adminer:latest
+    restart: always
+    ports:
+      - 8080:8080
+    links:
+        - "database"
+        
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: "remdine-mailhog"
+    restart: always
+    ports:
+      - "8025:8025"

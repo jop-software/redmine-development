@@ -1,0 +1,8 @@
+development:
+  email_delivery: 
+    delivery_method: :smtp
+    smtp_settings:
+      address: mailhog
+      port: 1025
+      domain: example.net
+      authentication: :plain
