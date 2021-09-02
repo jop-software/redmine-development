@@ -9,7 +9,7 @@ Stops the redmine container.
 The ruby on rails `rails`command
 - `bin/new-theme <name>`  
 Creates a new redmine theme
-- `bin/new-plugin <name>`
+- `bin/new-plugin <name>`  
 Creates a new redmine plugin
 - `bin/rake`  
 The `rake` command for all sort of tasks
