@@ -1,0 +1,12 @@
+#/bin/bash
+
+FULL_PATH=$(realpath $0)
+REAL_PATH=$(dirname $FULL_PATH)
+
+echo "[DB] Restoring your database. This will remove all data from the database!"
+
+bash $REAL_PATH/rails db:drop
+bash $REAL_PATH/rails db:create
+bash $REAL_PATH/rails db:migrate
+
+echo "[DB] Restored your database."
