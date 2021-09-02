@@ -13,6 +13,8 @@ Creates a new redmine theme
 Creates a new redmine plugin
 - `bin/rake`  
 The `rake` command for all sort of tasks
+- `bin/nuke`  
+Nukes all your plugins and themes! **This can not be reverted!**
 
 ## License
 This project is licensed under the [MIT License](/LICENSE)

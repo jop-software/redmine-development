@@ -1,0 +1,15 @@
+#!/bin/bash
+
+FULL_PATH=$(realpath $0)
+REAL_PATH=$(dirname $FULL_PATH)
+BASE_PATH=$REAL_PATH/..
+
+THEMES_DIR=$BASE_PATH/themes
+PLUGINS_DIR=$BASE_PATH/plugins
+
+echo "[NUKE] Nuking all your plugins and themes!"
+
+rm -rf $THEMES_DIR/*
+rm -rf $PLUGINS_DIR/*
+
+echo "[NUKE] Nuked all your plugins and theme!"
