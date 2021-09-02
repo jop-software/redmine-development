@@ -7,9 +7,11 @@ BASE_PATH=$REAL_PATH/..
 THEMES_DIR=$BASE_PATH/themes
 PLUGINS_DIR=$BASE_PATH/plugins
 
-echo "[NUKE] Nuking all your plugins and themes!"
+echo "[NUKE] Nuking all your plugins, themess and database!"
 
 rm -rf $THEMES_DIR/*
 rm -rf $PLUGINS_DIR/*
 
-echo "[NUKE] Nuked all your plugins and theme!"
+bash $REAL_PATH/restore-database
+
+echo "[NUKE] Nuked all your plugins, themes and database!"
