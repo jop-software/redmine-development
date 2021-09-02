@@ -1,0 +1,22 @@
+#!/bin/bash
+
+RUNNING=$(docker inspect --format="{{.State.Running}}" 'redmine' 2> /dev/null)
+
+if [ $RUNNING ]
+then
+    echo "[START] Docker container are already running:"
+    eval "docker-compose ps"
+    exit 0;
+else
+    echo "[START] Docker container not running, starting ..."
+    eval "docker-compose up -d"
+    if [ $? == 0 ]
+    then
+        echo "[START] Docker container started"
+        exit 0
+    else
+        CODE=$?
+        echo "[START] Docker container could not start!"
+        exit $CODE
+    fi
+fi
