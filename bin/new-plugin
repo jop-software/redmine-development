@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker exec redmine rails generate redmine_plugin $1 
