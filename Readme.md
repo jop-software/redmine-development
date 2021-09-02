@@ -16,7 +16,7 @@ The `rake` command for all sort of tasks
 - `bin/nuke`  
 Nukes all your plugins and themes! **This can not be reverted!**
 - `bin/restore-database`  
-Recreated an empty redmine database! **You will lose all of your data in the database**
+Recreated an empty redmine database! **You will lose all of the data in the database**
 
 ## License
 This project is licensed under the [MIT License](/LICENSE)
