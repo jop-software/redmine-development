@@ -1,0 +1,28 @@
+#!/bin/bash
+
+FULL_PATH=$(realpath $0)
+REAL_PATH=$(dirname $FULL_PATH)
+THEME_NAME=$1
+THEME_PATH=$REAL_PATH/../themes/$THEME_NAME
+
+if [ $THEME_NAME == "" ]
+then
+    echo "[THEME] You need to provide a theme name!"
+    exit 1
+fi
+
+if [ -d $THEME_PATH ]
+then
+    echo "[THEME] A theme with the name <$THEME_NAME> does already exist!"
+    exit 1
+fi
+
+echo "[THEME] Creating a new theme <$THEME_NAME>"
+mkdir $THEME_PATH
+mkdir $THEME_PATH/favicon
+touch $THEME_PATH/favicon/favicon.ico
+mkdir $THEME_PATH/javascript
+touch $THEME_PATH/javascript/theme.js
+mkdir $THEME_PATH/stylesheets
+touch $THEME_PATH/stylesheets/application.css
+echo "[THEME] Created a new theme <$THEME_NAME>"
