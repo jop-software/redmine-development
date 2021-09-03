@@ -1,0 +1,7 @@
+#!/bin/bash
+
+FULL_PATH=$(realpath $0)
+REAL_PATH=$(dirname $FULL_PATH)
+
+bash bin/stop
+bash bin/start
