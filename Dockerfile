@@ -1,4 +1,4 @@
-FROM redmine:4.2.2
+FROM redmine:4.2.4
 
 RUN apt update && apt upgrade -y
 
