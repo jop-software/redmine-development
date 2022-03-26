@@ -11,8 +11,6 @@ services:
       - "3000:3000"
     environment: 
       RAILS_ENV: "development"
-      REDMINE_DB_MYSQL: database
-      REDMINE_DB_PASSWORD: root
       REDMINE_SECRET_KEY_BASE: BfHuEvT6
     volumes:
       - ./files:/usr/src/redmine/files

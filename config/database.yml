@@ -1,0 +1,8 @@
+development:
+  adapter: "mysql2"
+  host: "database"
+  port: "3306"
+  username: "root"
+  password: "redmine"
+  database: "redmine"
+  encoding: 'utf8mb4'
