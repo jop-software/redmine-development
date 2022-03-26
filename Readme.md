@@ -21,4 +21,4 @@ Recreated an empty redmine database! **You will lose all of the data in the data
 ## License
 This project is licensed under the [MIT License](/LICENSE)
 
-<div align="center">&copy; 2021, <a href="https://jop-software.de">jop-software Inh. Johannes Przymusinski</a></div>
+<div align="center">&copy; 2021-2022, <a href="https://jop-software.de">jop-software Inh. Johannes Przymusinski</a></div>
